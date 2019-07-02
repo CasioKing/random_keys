@@ -1,0 +1,30 @@
+
+import time
+import random
+
+key = [
+"C", "D", "E", "F", "G", "A", "B", "Db", "Eb", "Gb",
+    "Ab", "Bb", "C#", "D#", "F#", "G#", "A#"
+]
+version = [
+"M", "m", "b5", "Dim", "sus2", "sus4"
+]
+inverted = [
+"Inverted", "No Inversion", "No Inversion", "No Inversion"
+]
+seventh = [
+"7", "", "9", "11","","","",""
+]
+
+def todays_Keys():
+    chosenKey = random.choice(key)
+    chosenVersions = random.choice(version)
+    chosenInversions = random.choice(inverted)
+    chosenSeventh = random.choice(seventh)
+
+    print(chosenKey+chosenVersions+chosenSeventh,chosenInversions)
+    time.sleep(1)
+
+
+todays_Keys()
+
