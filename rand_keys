@@ -1,30 +1,31 @@
-
-import time
 import random
 
 key = [
-"C", "D", "E", "F", "G", "A", "B", "Db", "Eb", "Gb",
-    "Ab", "Bb", "C#", "D#", "F#", "G#", "A#"
+    'C','Db','D','Eb','E','F',
+    'Gb','G','Ab','A','Bb','B'
 ]
-version = [
-"M", "m", "b5", "Dim", "sus2", "sus4"
+relativeMinor = [
+    'Am','Bbm','Bm','Cm','C#m','Dm',
+    'Ebm','Em','Fm','F#m','Gm','G#m'
 ]
-inverted = [
-"Inverted", "No Inversion", "No Inversion", "No Inversion"
-]
-seventh = [
-"7", "", "9", "11","","","",""
+relativeDim = [
+    'Bdim','Cdim','C#dim','Ddim','D#dim','Edim',
+    'E#dim','F#dim','Gdim','G#dim','Adim','A#dim'
 ]
 
-def todays_Keys():
-    chosenKey = random.choice(key)
-    chosenVersions = random.choice(version)
-    chosenInversions = random.choice(inverted)
-    chosenSeventh = random.choice(seventh)
+def testing():
+    spot = random.randint(0, 11)
+    pick = key[spot]
+    pickMin = relativeMinor[spot]
+    pickDim = relativeDim[spot]
+    if spot is 11:
+        spot = -1
+    pick4 = key[spot + 5]
+    pick5 = key[spot + 7]
+    print("Key:",pick)
+    print("The Fourth:",pick4)
+    print("The Fifth:",pick5)
+    print("Relative Minor:",pickMin)
+    print("Relative Diminished:",pickDim)
 
-    print(chosenKey+chosenVersions+chosenSeventh,chosenInversions)
-    time.sleep(1)
-
-
-todays_Keys()
-
+testing()
